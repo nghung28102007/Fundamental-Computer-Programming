@@ -8,6 +8,7 @@ circumference = 2 * math.pi * radius
 print("The circumference of the circle is: " + str(circumference))
 #4
 width = float(input("Enter the width of the rectangle: "))
+length = float(input("Enter the length of the rectangle: "))
 perimeter = 2 * (length + width)
 area = length * width
 print("The perimeter of the rectangle is: " + str(perimeter))
