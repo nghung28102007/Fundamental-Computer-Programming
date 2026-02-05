@@ -44,7 +44,45 @@ while True:
 #5
 correct_username = 'python'
 correct_password = 'rules'
-def auth(username, password, attempts):
-    if username != correct_username:
-        print("")
+max_attempts = 5
+def auth(attempts):
+    if attempts > max_attempts:
+        print("Access denied.")
+        return
+    
+    username = input("Enter your username:")
+    password = input("Enter your password:")
+    
+    if username == correct_username and password == correct_password:
+        print("Welcome")
+    else:
+        print(f"You have {max_attempts - attempts - 1 } tries left")
+        auth(attempts + 1) 
+auth(1) #enter the number of attempt 0-5
+
+#6
+inp_str = input("Enter your string:")
+if len(inp_str) % 2 == 0:
+    print(inp_str[len(inp_str) // 2  : len(inp_str) // 2 + 2])
+else:
+    print(inp_str[len(inp_str) // 2])
+
+#7
+def acronym(str):
+    words = str.split()
+    acronym = ""
+
+    for i in words:
+        letter = i[0].upper()
+        acronym += letter
+    print(acronym)
+
+
+acronym("viet nam")
+    
+
+
+
+
+        
 
