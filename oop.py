@@ -1,15 +1,21 @@
-class CreditCard:
-    def __init__(self, number, cvv, expiry):
-        self.number = number 
-        self.cvv = cvv
-        self.expiry = expiry
-    class User:
-        def __init__(self, name):
-            self.name = name
-            self.cards = []
+class Elevator:
+    def __init__(self, bottom_floor, top_floor):
+        self.bot = bottom_floor
+        self.top = top_floor
+        self.current = bottom_floor
+    def go_to_floor(self, target_floor):
+        self.target = target_floor
+        while self.current < self.target:
+            self.floor_up()
+        while self.current > self.target:
+            self.floor_down()
 
-        def add_card(self, card):
-            self.cards.append(card)
+    def floor_up(self):
+        self.current = self.current + 1
+        print(f"Current floor is {self.current}")
+    def floor_down(self):
+        self.current = self.current - 1
+        print(f"Current floor is {self.current}")
 
-card1 = CreditCard("hung", '0846281007', '01234567',)
-    
+h = Elevator(0, 10) 
+h.go_to_floor(5)
